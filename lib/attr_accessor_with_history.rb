@@ -6,7 +6,6 @@ class Class
     class_eval %Q{
       @#{attr_name}_history_array = []
       def #{attr_name}=(new_val)
-        @#{attr_name}_history_array.concat (@#{attr_name})
         @#{attr_name} = new_val
       end
     }
