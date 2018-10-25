@@ -4,7 +4,11 @@ class Class
     attr_reader attr_name # create the attribute's getter
     attr_reader attr_name+"_history" # create bar_history getter
     class_eval %Q{
-      # YOUR CODE HERE
+      @#{attr_name}_history_array = []
+      def #{attr_name}=(new_val)
+        @#{attr_name}_history_array.concat (@#{attr_name})
+        @#{attr_name} = new_val
+      end
     }
   end
 end
